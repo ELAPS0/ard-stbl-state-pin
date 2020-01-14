@@ -10,8 +10,8 @@
 
 //состояние входа  
 enum STBLPIN_STATE {
-      STBLPIN_ON,
-      STBLPIN_OFF
+      STBLPIN_OFF,
+      STBLPIN_ON
     };
 
 
@@ -20,10 +20,10 @@ class StableStatePin
 	//стабильное состояние
 	STBLPIN_STATE	stbl_state;
 
-	//текущее состояни входае
-	STBLPIN_STATE	pin_state;
-	//время изменения текущего состояния
-	uint32_t	pin_state_ts;
+	//состояни входа, которое станет стабильным состоянием, если продержиться без изменений в течении периода 
+	STBLPIN_STATE	pin_state_candidate;
+	//время изменения состояния-кадидата
+	uint32_t	pin_state_candidate_ts;
 
 	uint8_t 	pin; 
 	char 		name[MAX_NAME_LEN];
